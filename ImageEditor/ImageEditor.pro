@@ -17,14 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     App/main.cpp \
-    Common/image.cpp \
     Model/imagemodel.cpp \
     View/mainwindow.cpp \
     ViewModel/imageviewmodel.cpp
 
 HEADERS += \
-    Common/image.h \
-    Common/notification.h \
+    Common/etl.h \
     Model/imagemodel.h \
     View/mainwindow.h \
     ViewModel/imageviewmodel.h
