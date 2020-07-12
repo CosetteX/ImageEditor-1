@@ -6,6 +6,7 @@ ImageViewModel::ImageViewModel()
 
 }
 
+
 void ImageViewModel::SetModel(std::shared_ptr<ImageModel> model)
 {
     imageModel = model;
@@ -35,5 +36,4 @@ void ImageViewModel::ExecBlurCommand(int ksize, int anchor)
 {
     imageModel->Blur(ksize, anchor);
 }
-
 
