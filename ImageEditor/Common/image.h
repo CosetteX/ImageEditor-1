@@ -11,16 +11,13 @@ using namespace cv;
 
 class Image
 {
-private:
+public:
     Image();
-
+public:
     QString filename;
     Mat originImage;
     Mat currentImage;
-public:
-    void Gray();
-    void Blur();
-    void Sharp();
+
 };
 
 #endif // IMAGE_H

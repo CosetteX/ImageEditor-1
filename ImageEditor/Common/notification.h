@@ -13,19 +13,26 @@
 #include <array>
 #include <string>
 
+#include "Parameters.h"
 //types
 typedef unsigned char  uchar;
 
-//command
+
+class ICommandBase  //get command return type
+{
+public:
+    virtual void SetParameter(const Parameters& param) = 0;
+    virtual void Exec() = 0;
+};
 
 //属性发生改变
 class IPropertyNotification
 {
 public:
-    virtual void OnPropertyChanged(const std::string& str) = 0;
+    virtual void OnPropertyChanged(const std::string& str) = 0;   //不需要实现？
 };
 
-//命令完成  先不用它
+//命令完成  不管它先
 class ICommandCompleted
 {
 public:
@@ -34,6 +41,9 @@ public:
 
 class INotifyPropertyChanged
 {
+protected:
+    std::vector<std::shared_ptr<IPropertyNotification>> p_array;
+public:
     void ClearNotification() noexcept
     {
         p_array.clear();
@@ -49,11 +59,8 @@ class INotifyPropertyChanged
         auto iter(p_array.begin());
         for(;iter != p_array.end();++iter)
         {
-            (*iter)->OnPropertyChanged(str);
+            (*iter)->OnPropertyChanged(str);   //send message
         }
 
     }
-
-protected:
-    std::vector<std::shared_ptr<IPropertyNotification>> p_array;
 };

@@ -20,13 +20,16 @@ SOURCES += \
     Common/image.cpp \
     Model/imagemodel.cpp \
     View/mainwindow.cpp \
+    ViewModel/command.cpp \
     ViewModel/imageviewmodel.cpp
 
 HEADERS += \
+    Common/Parameters.h \
     Common/image.h \
     Common/notification.h \
     Model/imagemodel.h \
     View/mainwindow.h \
+    ViewModel/command.h \
     ViewModel/imageviewmodel.h
 
 FORMS += \
