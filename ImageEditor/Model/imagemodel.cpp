@@ -39,4 +39,3 @@ void ImageModel::Blur(int ksize, int anchor)
 {
     blur(currentImage, currentImage, Size(ksize, ksize), Point(anchor, anchor));
 }
-
